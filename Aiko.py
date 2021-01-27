@@ -29,9 +29,7 @@ client = command.Bot(command_prefix='&')
 Client = discord.Client()
 client.remove_command('help')
 r = rule34.Rule34
-reddit = praw.Reddit(client_id='9M3LEKA2h9dVhA',
-                     client_secret='NRxi4kOuRDBTnH8qj3DoWKeAAMSevQ',
-                     user_agent='BL4CK98')
+
 
 def xmlparse(str):
 	root = et.parse(u.urlopen(str))
@@ -377,4 +375,4 @@ async def bird(ctx):
 # ================================================================================================================
 
 
-client.run('NzQ2MzM0NTMyOTY1NDk4OTgx.Xz-0Mg.AxlUkw_ktl9OY-Yi6WrwQXJeN3M')
+client.run('YOUR TOKEN HERE')
