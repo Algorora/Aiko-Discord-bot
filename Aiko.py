@@ -1,3 +1,4 @@
+#TO DO:add is_nsfw() to the nsfw commands,add nsfw commands using an api(best api for this is neko.life)
 import discord
 from discord.ext import commands as command
 import urllib.request as u
