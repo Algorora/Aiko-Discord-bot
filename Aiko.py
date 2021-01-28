@@ -120,15 +120,14 @@ async def ban(self, ctx, member: discord.Member, *, reason=None):
 # ================================================================================================================
 @client.command()
 @command.has_permissions(administrator=True)
-async def unban(self, ctx, * member):
-	banned_users = await ctx.guild.bans()
-	member_name, member_discriminator = member.split("#")
-	for ban_entry in banned_users:
+async def unban(ctx, *, member):
+    banned_users = await ctx.guild.bans()
+    for ban_entry in banned_users:
 		user = ban_entry.user
-		if (user.name, user.discriminator) == (member_name, member_discriminator):
+		if member == user.name+"#"+user.discriminator or member == str(user.id):
 			await ctx.guild.unban(user)
-			await ctx.send(f'**{user.mention} has been unbanned**')
-			return
+                        await ctx.send(f'**{user.mention} has been unbanned**')
+                        return
 # ================================================================================================================
 @client.command()
 @command.has_permissions(kick_members=True)
